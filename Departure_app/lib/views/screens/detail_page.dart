@@ -12,7 +12,9 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xff4E000E),
         foregroundColor: Colors.white,
-        title: Text("${data['name']}"),
+        title: Text(
+          "श्लोक:${data["verse_number"]}",
+        ),
         centerTitle: true,
         actions: [
           IconButton(
@@ -27,7 +29,7 @@ class DetailPage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Consumer<slokacontroller>(builder: (context, Provider, child) {
           return Container(
-            padding: EdgeInsets.fromLTRB(100, 10, 20, 10),
+            padding: EdgeInsets.fromLTRB(100, 10, 100, 10),
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/image/page.jpg"),
@@ -35,25 +37,16 @@ class DetailPage extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SelectableText(
-                    "${data["id"]}\t\t"
-                    "${data["name"]}",
+                SelectableText("श्लोक:${data["verse_number"]}",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 25,
                         fontWeight: FontWeight.bold)),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: SelectableText(
-                    "${data["name_translation"]}",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
                 SizedBox(
                   height: 20,
                 ),
                 SelectableText(
-                    "${Provider.translate ? data["chapter_summary_hindi"] : data["chapter_summary"]}",
+                    "${Provider.translate ? data["text"] : data["transliteration"]}",
                     style: TextStyle(color: Colors.white, fontSize: 12)),
               ],
             ),

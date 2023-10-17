@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
                           child: ListTile(
                             onTap: () {
                               Navigator.of(context)
-                                  .pushNamed("Detail_Page", arguments: data);
+                                  .pushNamed("Sloka_Page", arguments: data);
                             },
                             title: Text(
                               "${snapshot.data![index]["name"]}",
@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             Navigator.of(context)
-                                .pushNamed("Detail_Page", arguments: data);
+                                .pushNamed("Sloka_Page", arguments: data);
                           },
                           child: Container(
                               padding: EdgeInsets.all(5),

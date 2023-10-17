@@ -13,4 +13,12 @@ class JsonHelper {
 
     return allsloka;
   }
+
+  Future<List> getSloka1() async {
+    String data = await rootBundle.loadString('assets/Json/sloka_gita.json');
+
+    List allsloka1 = jsonDecode(data);
+
+    return allsloka1;
+  }
 }

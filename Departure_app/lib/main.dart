@@ -1,6 +1,8 @@
 import 'package:departure_app/controller/sloka_controller.dart';
 import 'package:departure_app/views/screens/detail_page.dart';
 import 'package:departure_app/views/screens/home_Page.dart';
+import 'package:departure_app/views/screens/sloka_page.dart';
+import 'package:departure_app/views/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,10 +23,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      initialRoute: "/",
+      initialRoute: "splash_screen",
       routes: {
         "/": (context) => HomePage(),
+        "splash_screen": (context) => splashscreen(),
         "Detail_Page": (context) => DetailPage(),
+        "Sloka_Page": (context) => slokaPage(),
       },
     );
   }
